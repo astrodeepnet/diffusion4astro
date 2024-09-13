@@ -15,3 +15,16 @@ repos:
     hooks:
       - id: isort
         name: isort (python)
+-  repo: https://github.com/nbQA-dev/nbQA
+   rev: 1.8.4
+   hooks:
+     - id: nbqa-black
+       additional_dependencies: [black==22.3.0]
+     - id: nbqa-pyupgrade
+       additional_dependencies: [pyupgrade==2.31.0]
+     - id: nbqa-isort
+       additional_dependencies: [isort==5.12.0]
+       args: [--profile=black]
+     - id: nbqa-flake8
+       additional_dependencies: [flake8==4.0.1]
+       args: ['--ignore=E501,E402,E203,E731,W503']
