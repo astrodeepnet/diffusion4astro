@@ -317,7 +317,7 @@ def composition(x, func1 = pre_process2, func2 = apply_psf_kernel):
 def main():
 
     cur_dir = os.getcwd()
-    file = fits.open(cur_dir + 'TNG/shalo_089-1_v0_photo.fits')
+    file = fits.open(cur_dir + 'TNG/shalo_072-6_v0_photo.fits')
 
     r = file[1].data
     g = file[2].data
