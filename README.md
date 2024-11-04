@@ -48,7 +48,7 @@ TODO: The sampling can also be done in parallel (Wassim please write this part).
 
 Similarly, one could sample multiple times from the posterior distribution, i.e., use the DPS algorithm to solve the inverse problem and sample according to it. We provided two modified versions of the `image_sample.py` script, called `image_sample_inv.py` and `image_sample_inv_HSC.py`, that do this.
 
-- `image_sample_inv.py`: takes an Idealized image from the TNG folder to which artificially adds a certain level of noise after having fixed a certain magnitude. Once the image has been blurred the script samples `num_samples` samples from the posterior samples (the `num_samples` parameter has to be modified in the `create_argparser()` function inside the script).
+- `image_sample_inv.py`: takes an Idealized image from the TNG folder (contained in the `TNG.7z` file) to which artificially adds a certain level of noise after having fixed a certain magnitude. Once the image has been blurred the script samples `num_samples` samples from the posterior samples (the `num_samples` parameter has to be modified in the `create_argparser()` function inside the script).
 
 - `image_sample_inv_HSC.py`: takes an actual HSC image from the HSC PDR3 folder and then samples `num_samples` samples from the posterior samples (the `num_samples` parameter has to be modified in the `create_argparser()` function inside the script).
 
