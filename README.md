@@ -2,6 +2,15 @@
 
 This is the codebase for [Bayesian Deconvolution of Astronomical Images with Diffusion Models: Quantifying Prior-Driven Features in Reconstructions](ArXiv).
 
+<p align="center">
+    <img src="./Results/test1.png" width="450"/>
+    <img src="./Results/test2.png" width="450"/>
+</p>
+
+<p align="center">
+    <img src="./Results/Pipeline.png" width="400"/>
+</p>
+
 # Usage
 
 This section of the README walks through how to train and sample from a model, then it focuses on the deployment through the .ipynb files.
@@ -62,4 +71,4 @@ The notebooks provided in the repository mean to give an easy way to deploy the 
 - The `DPS_variances.ipynb` notebook takes as input .npz files containing samples (like those we obtain as output of the sampling process) and computes the mean and variance. Similarly, it computes the Posterior Mean when it's run on samples obtained from the DPS algorithm.
 - The `DPS_cat.ipynb` notebook shows an example of recostruction of a noisy and convolved image that does not belong to the training set manifold, such as the image of a cat. As the noise level increases we observe how the prior injects more information into the recostruction, ending up with a TNG-like cat-shaped galaxy.
 - The `Deblending.ipynb` notebook shows a proof-of-concept of how to use the DPS algorithm and a DDPM model trained on the TNG dataset to address thet deblending task.
-- The `UMAP.ipynb` notebook can be used to compute a UMAP projection of the training TNG images (given a folder containing them) and can then project sampled images, saving the representation as a .html file. 
+- The `UMAP.ipynb` notebook can be used to compute a UMAP projection of the training TNG images (given a folder containing them) and can then project sampled images, saving the representation as a .html file.
