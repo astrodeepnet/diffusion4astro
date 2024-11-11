@@ -3,8 +3,8 @@
 This is the codebase for [Bayesian Deconvolution of Astronomical Images with Diffusion Models: Quantifying Prior-Driven Features in Reconstructions](ArXiv).
 
 <p align="center">
-    <img src="./Results/test1.png" width="450"/>
-    <img src="./Results/test2.png" width="450"/>
+    <img src="./Results/test1.png" width="400"/>
+    <img src="./Results/test2.png" width="400"/>
 </p>
 
 <p align="center">
