@@ -50,8 +50,14 @@ Similarly, one could sample multiple times from the posterior distribution, i.e.
 
 - `image_sample_inv.py`: takes an Idealized image from the TNG folder (contained in the `TNG.7z` file) to which artificially adds a certain level of noise after having fixed a certain magnitude. Once the image has been blurred the script samples `num_samples` samples from the posterior samples (the `num_samples` parameter has to be modified in the `create_argparser()` function inside the script).
 
-- `image_sample_inv_HSC.py`: takes an actual HSC image from the HSC PDR3 folder and then samples `num_samples` samples from the posterior samples (the `num_samples` parameter has to be modified in the `create_argparser()` function inside the script).
+- `image_sample_inv_HSC.py`: takes an actual HSC image from the `HSC PDR3` folder and then samples `num_samples` samples from the posterior samples (the `num_samples` parameter has to be modified in the `create_argparser()` function inside the script).
 
 ## Running the notebooks
 
-TODO
+The notebooks provided in the repository mean to give an easy way to deploy the DPS algorithm applied to different settings.
+
+- The `DPS_TNG.ipynb` notebook takes a TNG-HSC image and tries to solve the deconvolution task given the redshift and PSF information contained in the TNG .fits file header. A comparison with the ground-truth TNG simulation is possible.
+- The `DPS_HSC.ipynb` notebook takes a real HSC cropped image and the associated approximated PSF from the `HSC PDR3` folder, and tries to solve the deconvolution task. The redshift information is contained in the .csv files and must be manually set in the z variable inside the notebook.
+- The `DPS_hallucinations.ipynb` notebook takes a Idealized TNG image, artificially adds a PSF and a Gaussian noise sampled from real HSC images, sets it to the HSC pixel scale, changes the magnitude to modify the SNR, and then tries to solve the deconvolution task given the redshift contained in the TNG .fits file header.
+- The `DPS_variances.ipynb` notebook takes as input .npz files containing samples (like those we obtain as output of the sampling process) and computes the mean and variance. Similarly, it computes the Posterior Mean when it's run on samples obtained from the DPS algorithm.
+- 
