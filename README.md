@@ -41,7 +41,7 @@ The logs and saved models will be written to a logging directory determined by t
 
 ## Sampling
 
-The above training script saves checkpoints to `.pt` files in the logging directory. These checkpoints will have names like `ema_0.9999_200000.pt` and `model200000.pt`. You will likely want to sample from the EMA models, since those produce much better samples.
+The above training script saves checkpoints to `.pt` files in the logging directory. These checkpoints will have names like `ema_0.9999_200000.pt` and `model200000.pt`. You will likely want to sample from the EMA models, since those produce much better samples. We provide the model used to produce the experiments shown in the paper: [https://zenodo.org/records/14097251](https://zenodo.org/records/14097251).
 
 Once you have a path to your model, you can generate a large batch of samples like so:
 
