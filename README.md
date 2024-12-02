@@ -1,6 +1,6 @@
 # Diffusion4astro
 
-This is the codebase for [Bayesian Deconvolution of Astronomical Images with Diffusion Models: Quantifying Prior-Driven Features in Reconstructions](ArXiv).
+This is the codebase for [Bayesian Deconvolution of Astronomical Images with Diffusion Models: Quantifying Prior-Driven Features in Reconstructions](https://arxiv.org/abs/2411.19158).
 
 <p align="center">
     <img src="./Results/test1.png" width="400"/>
