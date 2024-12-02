@@ -72,3 +72,20 @@ The notebooks provided in the repository mean to give an easy way to deploy the 
 - The `DPS_cat.ipynb` notebook shows an example of recostruction of a noisy and convolved image that does not belong to the training set manifold, such as the image of a cat. As the noise level increases we observe how the prior injects more information into the recostruction, ending up with a TNG-like cat-shaped galaxy.
 - The `Deblending.ipynb` notebook shows a proof-of-concept of how to use the DPS algorithm and a DDPM model trained on the TNG dataset to address thet deblending task.
 - The `UMAP.ipynb` notebook can be used to compute a UMAP projection of the training TNG images (given a folder containing them) and can then project sampled images, saving the representation as a .html file.
+
+## Cite
+
+To cite this work, please use the following reference:
+
+```bibtex
+@misc{spagnoletti2024bayesiandeconvolutionastronomicalimages,
+      title={Bayesian Deconvolution of Astronomical Images with Diffusion Models: Quantifying Prior-Driven Features in Reconstructions}, 
+      author={Alessio Spagnoletti and Alexandre Boucaud and Marc Huertas-Company and Wassim Kabalan and Biswajit Biswas},
+      year={2024},
+      eprint={2411.19158},
+      archivePrefix={arXiv},
+      primaryClass={astro-ph.IM},
+      url={https://arxiv.org/abs/2411.19158}, 
+}
+```
+If you find this repository useful for your research, please consider citing it to acknowledge our work.
