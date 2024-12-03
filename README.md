@@ -33,9 +33,7 @@ where:
 MODEL_FLAGS="--image_size 256 --num_channels 192 --num_res_blocks 3"
 DIFFUSION_FLAGS="--diffusion_steps 1000 --noise_schedule cosine"
 TRAIN_FLAGS="--lr 1e-4 --batch_size 16 --use_fp16 True" 
-```
-
-TODO: The training can also be done in parallel (Wassim please write this part).
+``` 
 
 The logs and saved models will be written to a logging directory determined by the `OPENAI_LOGDIR` environment variable. If it is not set, then a temporary directory will be created in `/tmp`.
 
@@ -50,8 +48,6 @@ python image_sample.py --model_path /path/to/model.pt $MODEL_FLAGS $DIFFUSION_FL
 ```
 
 Again, this will save results to a logging directory. Samples are saved as a large `npz` file, where `arr_0` in the file is a large batch of samples.
-
-TODO: The sampling can also be done in parallel (Wassim please write this part).
 
 ## Solving the inverse problem
 
