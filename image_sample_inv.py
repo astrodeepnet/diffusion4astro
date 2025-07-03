@@ -8,7 +8,7 @@ import argparse
 import os
 
 import numpy as np
-import torch as th
+import torch
 import torch.distributed as dist
 import torchvision
 import torchvision.transforms.functional as TF
@@ -413,7 +413,7 @@ def main():
     while len(all_images) * args.batch_size < args.num_samples:
         model_kwargs = {}
         if args.class_cond:
-            classes = th.randint(
+            classes = torch.randint(
                 low=0, high=NUM_CLASSES, size=(args.batch_size,), device=dist_util.dev()
             )
             model_kwargs["y"] = classes
@@ -432,13 +432,13 @@ def main():
         sample = sample.permute(0, 2, 3, 1)
         sample = sample.contiguous()
 
-        gathered_samples = [th.zeros_like(sample) for _ in range(dist.get_world_size())]
+        gathered_samples = [torch.zeros_like(sample) for _ in range(dist.get_world_size())]
         
         dist.all_gather(gathered_samples, sample)  # gather not supported with NCCL
         all_images.extend([sample.cpu().numpy() for sample in gathered_samples])
         if args.class_cond:
             gathered_labels = [
-                th.zeros_like(classes) for _ in range(dist.get_world_size())
+                torch.zeros_like(classes) for _ in range(dist.get_world_size())
             ]
             dist.all_gather(gathered_labels, classes)
             all_labels.extend([labels.cpu().numpy() for labels in gathered_labels])
