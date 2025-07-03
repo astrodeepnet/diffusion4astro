@@ -17,8 +17,17 @@ This section of the README walks through how to train and sample from a model, t
 
 ## Installation
 
-Clone this repository and navigate to it in your terminal. Then install the required packages through the `requirements.txt` file.
+Clone this repository and navigate to it in your terminal. Then install the required packages through the `requirements.txt` file. This will be sufficient to run all the notebooks. To run the sampling and training script mpi4py is necessary, it can be installed following:
 
+```
+sudo apt install libmpich-dev
+```
+
+and then
+
+```
+pip install --no-binary=mpi4py mpi4py
+```
 ## Training
 
 To train your model, you should first decide some hyperparameters. We remind that the training code is an extended version of [Improved Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2102.09672), where the authors split up the hyperparameters into three groups: model architecture, diffusion process, and training flags. We can train a DDPM given a cached training set named `TNG.pth` or `TNG_276x276.pth`: the first case is for the standard dataset, the second one is if we want to activate the random 10px shift. To choose between the two, the `improved_diffusion/TNG_Ideal.py` class `TNGDataset` must be modified accordingly, together with the `__getitem__` function inside the same script (the default is to use the random shift version). To train we'll then run:
