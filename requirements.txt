@@ -16,6 +16,7 @@ fonttools==4.53.0
 fsspec==2024.6.0
 ipykernel==6.29.5
 ipython==8.26.0
+ipywidgets==8.1.7
 jedi==0.19.1
 Jinja2==3.1.4
 joblib==1.4.2
@@ -70,6 +71,7 @@ PyYAML==6.0.1
 pyzmq==26.0.3
 referencing==0.35.1
 rpds-py==0.20.0
+scikit-image==0.25.2
 scikit-learn==1.5.1
 scipy==1.14.0
 six==1.16.0
